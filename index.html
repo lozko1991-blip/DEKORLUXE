@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Поклейка шпалер у Києві — якісно, швидко, за доступними цінами. Від 79 грн/м². Виклик майстра безкоштовно.">
+<meta name="keywords" content="поклейка шпалер київ, поклеїти шпалери, маляри київ, шпалери ціна">
+<title>Поклейка шпалер у Києві — DecorLux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080F1A;
+  --bg2: #0D1825;
+  --bg3: #112035;
+  --blue: #1565C0;
+  --blue-bright: #2196F3;
+  --blue-light: #64B5F6;
+  --blue-glow: rgba(33,150,243,0.15);
+  --text: #E8EEF7;
+  --muted: #7B93B0;
+  --white: #ffffff;
+  --accent: #FFD54F;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── FLOATING CALL BUTTON ── */
+.float-call {
+  position: fixed;
+  left: 16px;
+  bottom: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50px;
+  text-decoration: none;
+  max-width: 52px;
+  transition: max-width 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(33,150,243,0.5);
+  animation: floatPulse 2.5s ease-in-out infinite;
+}
+.float-call:hover, .float-call:focus { max-width: 240px; box-shadow: 0 6px 32px rgba(33,150,243,0.7); }
+.float-call-icon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  background: #2196F3;
+  border-radius: 50px;
+  display: flex; align-items: center; justify-content: center;
+}
+.float-call-icon svg { width: 22px; height: 22px; fill: #fff; }
+.float-call-label {
+  background: #2196F3;
+  color: #fff;
+  font-size: 14px; font-weight: 500;
+  padding: 0 18px 0 6px;
+  white-space: nowrap;
+  line-height: 52px;
+  opacity: 0;
+  transition: opacity 0.2s 0.15s;
+}
+.float-call:hover .float-call-label,
+.float-call:focus .float-call-label { opacity: 1; }
+
+@keyframes floatPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(33,150,243,0.5), 0 0 0 0 rgba(33,150,243,0.35); }
+  60% { box-shadow: 0 4px 20px rgba(33,150,243,0.5), 0 0 0 12px rgba(33,150,243,0); }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(8,15,26,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(33,150,243,0.1);
+  transition: background 0.3s;
+}
+.nav-logo {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 15px; font-weight: 900;
+  color: #fff; text-decoration: none; letter-spacing: 1px;
+}
+.nav-logo span { color: #2196F3; }
+.nav-cta {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 16px;
+  background: transparent;
+  border: 1px solid rgba(33,150,243,0.35);
+  border-radius: 50px;
+  color: #64B5F6;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: rgba(33,150,243,0.12); border-color: #2196F3; color: #fff; }
+.nav-cta svg { width: 14px; height: 14px; fill: #2196F3; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 20px 70px;
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(33,150,243,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33,150,243,0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 100%);
+}
+.hero-glow {
+  position: absolute; pointer-events: none;
+  bottom: -80px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(33,150,243,0.16) 0%, transparent 65%);
+}
+.bubble {
+  position: absolute; border-radius: 50%;
+  background: #2196F3; pointer-events: none;
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; width: 100%; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(33,150,243,0.1);
+  border: 1px solid rgba(33,150,243,0.28);
+  border-radius: 50px; padding: 5px 14px 5px 10px;
+  font-size: 12px; color: #64B5F6; margin-bottom: 22px;
+  animation: fadeUp 0.5s ease both;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #2196F3;
+  animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
+h1 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(28px, 8vw, 60px);
+  font-weight: 900; line-height: 1.08;
+  color: #fff; margin-bottom: 18px;
+  animation: fadeUp 0.5s 0.08s ease both;
+}
+h1 .blue { color: #2196F3; }
+
+.hero-sub {
+  font-size: clamp(14px, 3.5vw, 17px);
+  color: #7B93B0; line-height: 1.65;
+  margin-bottom: 34px; max-width: 520px;
+  animation: fadeUp 0.5s 0.16s ease both;
+}
+
+.cta-row {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  animation: fadeUp 0.5s 0.24s ease both;
+  margin-bottom: 52px;
+}
+.btn-main {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: #2196F3; color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  padding: 14px 28px; border-radius: 50px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-main:hover { background: #1565C0; transform: translateY(-2px); }
+.btn-main svg { width: 18px; height: 18px; fill: #fff; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center;
+  background: transparent; color: #64B5F6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  padding: 14px 28px; border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid rgba(33,150,243,0.3);
+  transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(33,150,243,0.1); border-color: #2196F3; }
+
+.stats-row {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  animation: fadeUp 0.5s 0.32s ease both;
+}
+.stat-num {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px; font-weight: 700; color: #2196F3;
+  display: block;
+}
+.stat-label { font-size: 12px; color: #7B93B0; margin-top: 2px; display: block; }
+
+.scroll-hint {
+  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  z-index: 2; animation: fadeUp 0.5s 0.8s ease both;
+}
+.scroll-box {
+  width: 22px; height: 34px;
+  border: 1.5px solid rgba(33,150,243,0.35); border-radius: 11px;
+  display: flex; justify-content: center; padding-top: 6px;
+}
+.scroll-dot {
+  width: 4px; height: 4px; border-radius: 50%; background: #2196F3;
+  animation: sdrop 1.9s ease-in-out infinite;
+}
+@keyframes sdrop { 0%{transform:translateY(0);opacity:1;} 80%{transform:translateY(11px);opacity:0;} 100%{transform:translateY(0);opacity:0;} }
+.scroll-label { font-size: 10px; color: #7B93B0; letter-spacing: 1.5px; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px);} to{opacity:1;transform:translateY(0);} }
+
+/* ── SECTIONS ── */
+.sec { padding: 64px 20px; }
+.sec-inner { max-width: 740px; margin: 0 auto; }
+.sec-dark { background: var(--bg2); }
+.sec-tag { font-size: 11px; color: #64B5F6; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.sec-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 700; color: #fff; line-height: 1.2;
+  margin-bottom: 10px;
+}
+.sec-line { width: 38px; height: 3px; background: #2196F3; border-radius: 2px; margin-bottom: 30px; }
+
+/* ── PRICES ── */
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; margin-bottom: 20px;
+}
+.pc {
+  background: var(--bg3);
+  border: 1px solid rgba(33,150,243,0.13);
+  border-radius: 14px; padding: 18px 14px;
+  text-align: center; position: relative; overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.pc::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: #2196F3; opacity: 0; transition: opacity 0.2s;
+}
+.pc:hover { border-color: rgba(33,150,243,0.4); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(33,150,243,0.13); }
+.pc:hover::after, .pc.hot::after { opacity: 1; }
+.pc.hot { border-color: rgba(33,150,243,0.4); }
+.pc-price {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px; font-weight: 700; color: #2196F3; margin-bottom: 4px;
+}
+.pc-unit { font-size: 11px; color: #7B93B0; margin-bottom: 6px; }
+.pc-name { font-size: 13px; color: #E8EEF7; font-weight: 500; }
+
+.info-box {
+  background: rgba(33,150,243,0.07);
+  border: 1px solid rgba(33,150,243,0.18);
+  border-radius: 12px; padding: 16px 18px;
+  font-size: 13px; color: #7B93B0; line-height: 1.65;
+}
+.info-box strong { color: #64B5F6; }
+
+/* ── FACTORS ── */
+.factors { display: flex; flex-direction: column; gap: 12px; }
+.fac {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--bg3); border: 1px solid rgba(33,150,243,0.1);
+  border-radius: 14px; padding: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.fac:hover { border-color: rgba(33,150,243,0.32); transform: translateX(4px); }
+.fac-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: rgba(33,150,243,0.1); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.fac-icon svg { width: 20px; height: 20px; fill: #2196F3; }
+.fac-title { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.fac-text { font-size: 13px; color: #7B93B0; line-height: 1.6; }
+
+/* ── TYPES ── */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.tc {
+  background: var(--bg3); border: 1px solid rgba(33,150,243,0.1);
+  border-radius: 14px; padding: 16px 14px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.tc:hover { border-color: rgba(33,150,243,0.38); background: rgba(33,150,243,0.05); }
+.tc-emoji { font-size: 22px; margin-bottom: 8px; }
+.tc-name { font-size: 13px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.tc-desc { font-size: 11px; color: #7B93B0; line-height: 1.5; }
+
+/* ── REVIEWS ── */
+.reviews-grid { display: flex; flex-direction: column; gap: 12px; }
+.rv {
+  background: var(--bg3); border: 1px solid rgba(33,150,243,0.1);
+  border-radius: 16px; padding: 20px; position: relative; overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.rv:hover { border-color: rgba(33,150,243,0.32); box-shadow: 0 4px 20px rgba(33,150,243,0.1); }
+.rv::before {
+  content: '\201C'; position: absolute;
+  top: 8px; right: 16px;
+  font-size: 52px; color: rgba(33,150,243,0.1);
+  font-family: Georgia, serif; line-height: 1; pointer-events: none;
+}
+.rv-stars { color: #FFD54F; font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+.rv-text { font-size: 14px; color: #E8EEF7; line-height: 1.7; margin-bottom: 14px; }
+.rv-author { display: flex; align-items: center; gap: 10px; }
+.rv-av {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #1565C0; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; flex-shrink: 0;
+}
+.rv-name { font-size: 13px; font-weight: 500; color: #fff; }
+
+/* ── AREAS ── */
+.areas-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.area {
+  padding: 7px 14px; border-radius: 50px; font-size: 12px;
+  border: 1px solid rgba(33,150,243,0.22); color: #64B5F6;
+  background: rgba(33,150,243,0.05);
+  transition: all 0.18s; cursor: default;
+}
+.area:hover { background: #2196F3; color: #fff; border-color: #2196F3; }
+
+/* ── CONTACT ── */
+.contact-sec {
+  background: var(--bg); text-align: center;
+  padding: 72px 20px; position: relative; overflow: hidden;
+}
+.contact-glow {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 600px; height: 350px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(33,150,243,0.13), transparent 68%);
+}
+.contact-inner { position: relative; z-index: 2; max-width: 500px; margin: 0 auto; }
+.contact-phone {
+  display: block; font-family: 'Unbounded', sans-serif;
+  font-size: clamp(22px, 6vw, 38px); font-weight: 700;
+  color: #fff; text-decoration: none;
+  margin: 22px auto 28px;
+  transition: color 0.2s;
+}
+.contact-phone:hover { color: #2196F3; }
+.contact-note { font-size: 13px; color: #7B93B0; margin-top: 20px; line-height: 1.7; }
+.contact-note strong { color: #64B5F6; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid rgba(33,150,243,0.08);
+  padding: 22px 20px;
+  text-align: center; font-size: 12px; color: #7B93B0;
+}
+footer a { color: #64B5F6; text-decoration: none; }
+
+/* ── REVEAL ── */
+.r { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.r.on { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 400px) {
+  .prices-grid { grid-template-columns: 1fr 1fr; }
+  .types-grid { grid-template-columns: 1fr 1fr; }
+  h1 { font-size: 26px; }
+}
+@media (min-width: 600px) {
+  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .types-grid { grid-template-columns: repeat(3, 1fr); }
+  .prices-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+  nav { padding: 0 40px; height: 66px; }
+  .sec { padding: 80px 40px; }
+  .hero { padding: 100px 40px 80px; }
+  .float-call { left: 20px; bottom: 32px; }
+}
+@media (min-width: 1024px) {
+  nav { padding: 0 60px; }
+  .sec { padding: 96px 60px; }
+  .hero { padding: 120px 60px 100px; }
+  .sec-inner { max-width: 900px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Floating call button -->
+<a class="float-call" href="tel:+380950166845" aria-label="Зателефонувати нам">
+  <span class="float-call-icon">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </span>
+  <span class="float-call-label">+380 95 016 68 45</span>
+</a>
+
+<!-- Nav -->
+<nav id="nav">
+  <a class="nav-logo" href="#"><span>Decor</span>Lux</a>
+  <a class="nav-cta" href="tel:+380950166845">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Дзвоніть
+  </a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="bubble" style="width:260px;height:260px;top:-70px;right:-50px;opacity:0.055;animation:blink 9s ease-in-out infinite;"></div>
+  <div class="bubble" style="width:140px;height:140px;bottom:90px;left:-30px;opacity:0.07;animation:blink 12s ease-in-out infinite 2s;"></div>
+  <div class="bubble" style="width:80px;height:80px;top:38%;right:8%;opacity:0.08;animation:blink 8s ease-in-out infinite 1s;"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Київ та Київська область
+    </div>
+    <h1>Поклейка<br><span class="blue">шпалер</span><br>у Києві</h1>
+    <p class="hero-sub">Хочете дізнатися скільки коштує поклеїти шпалери за вигідними цінами? Ціни — нижче, а майстра можна викликати прямо зараз.</p>
+    <div class="cta-row">
+      <a class="btn-main" href="tel:+380950166845">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Викликати майстра
+      </a>
+      <a class="btn-ghost" href="#prices">Переглянути ціни</a>
+    </div>
+    <div class="stats-row">
+      <div>
+        <span class="stat-num" data-target="10" data-suffix="+">0+</span>
+        <span class="stat-label">років досвіду</span>
+      </div>
+      <div>
+        <span class="stat-num" data-target="500" data-suffix="+">0+</span>
+        <span class="stat-label">об'єктів виконано</span>
+      </div>
+      <div>
+        <span class="stat-num" data-target="49" data-suffix="" data-display="4.9★">0</span>
+        <span class="stat-label">рейтинг клієнтів</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-box"><div class="scroll-dot"></div></div>
+    <span class="scroll-label">скролити</span>
+  </div>
+</section>
+
+<!-- Prices -->
+<section class="sec sec-dark" id="prices">
+  <div class="sec-inner">
+    <p class="sec-tag r">Прозорі тарифи</p>
+    <h2 class="sec-title r">Ціни на 2025 рік</h2>
+    <div class="sec-line r"></div>
+    <div class="prices-grid r">
+      <div class="pc hot">
+        <div class="pc-price">від 79</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Метрові шпалери</div>
+      </div>
+      <div class="pc">
+        <div class="pc-price">100</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Півметрові шпалери</div>
+      </div>
+      <div class="pc">
+        <div class="pc-price">25</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Ґрунтовка стін</div>
+      </div>
+      <div class="pc">
+        <div class="pc-price">140</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Фарбування</div>
+      </div>
+      <div class="pc">
+        <div class="pc-price">30</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Ґрунтовка стелі</div>
+      </div>
+      <div class="pc">
+        <div class="pc-price">від 250</div>
+        <div class="pc-unit">грн / м²</div>
+        <div class="pc-name">Шпаклювання стін</div>
+      </div>
+    </div>
+    <div class="info-box r">
+      <strong>Точна ціна — після безкоштовного розрахунку.</strong> Зателефонуйте, ми узгодимо зручний час, приїдемо, оцінимо об'єкт і назвемо фінальну суму без прихованих доплат. При площі від 200 м² — додаткова знижка.
+    </div>
+  </div>
+</section>
+
+<!-- Factors -->
+<section class="sec" id="factors">
+  <div class="sec-inner">
+    <p class="sec-tag r">Деталі</p>
+    <h2 class="sec-title r">Від чого залежить ціна</h2>
+    <div class="sec-line r"></div>
+    <div class="factors">
+      <div class="fac r">
+        <div class="fac-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div>
+          <div class="fac-title">Якість основи</div>
+          <div class="fac-text">Якщо стіна готова, пошпакльована та прогрунтована — вартість включає лише поклейку. Якщо потрібне вирівнювання — ціна зростає відповідно.</div>
+        </div>
+      </div>
+      <div class="fac r">
+        <div class="fac-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+        <div>
+          <div class="fac-title">Обсяг робіт</div>
+          <div class="fac-text">Ми зацікавлені у великих об'єктах — при площі понад 200 м² ви маєте право на додаткову знижку.</div>
+        </div>
+      </div>
+      <div class="fac r">
+        <div class="fac-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div>
+          <div class="fac-title">Віддаленість від Києва</div>
+          <div class="fac-text">На об'єктах у Києві — найнижча ціна. За містом — вартість з урахуванням відстані та витрат на виїзд.</div>
+        </div>
+      </div>
+      <div class="fac r">
+        <div class="fac-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+        <div>
+          <div class="fac-title">Швидкість виконання</div>
+          <div class="fac-text">Терміново? Можемо збільшити кількість майстрів та подовжити робочий день, але вартість може зрости.</div>
+        </div>
+      </div>
+      <div class="fac r">
+        <div class="fac-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg></div>
+        <div>
+          <div class="fac-title">Вартість шпалер</div>
+          <div class="fac-text">Ми несемо відповідальність за довірені матеріали, тому ціна роботи може залежати від вартості самих шпалер.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Types -->
+<section class="sec sec-dark" id="types">
+  <div class="sec-inner">
+    <p class="sec-tag r">Асортимент</p>
+    <h2 class="sec-title r">Види шпалер</h2>
+    <div class="sec-line r"></div>
+    <div class="types-grid r">
+      <div class="tc"><div class="tc-emoji">🪨</div><div class="tc-name">Вінілові</div><div class="tc-desc">Шовкографія, важкий вініл, спінений вініл, штучна шкіра</div></div>
+      <div class="tc"><div class="tc-emoji">📄</div><div class="tc-name">Паперові</div><div class="tc-desc">Гладкі, фотошпалери, дуплекс — гладкі, тиснені, гофровані</div></div>
+      <div class="tc"><div class="tc-emoji">🧵</div><div class="tc-name">Текстильні</div><div class="tc-desc">На паперовій або тканинній основі, синтетика, скловолокно</div></div>
+      <div class="tc"><div class="tc-emoji">💧</div><div class="tc-name">Рідкі</div><div class="tc-desc">Наносяться валиком або пульверизатором у рідкому вигляді</div></div>
+      <div class="tc"><div class="tc-emoji">🪵</div><div class="tc-name">Пробкові</div><div class="tc-desc">На основі кори пробкового дуба — натурально та екологічно</div></div>
+      <div class="tc"><div class="tc-emoji">🎋</div><div class="tc-name">Бамбукові</div><div class="tc-desc">Рейки від 5 до 25 мм на тканинній основі</div></div>
+    </div>
+    <div class="info-box r" style="margin-top:20px;">
+      <strong>Підготовка стін — основа якості.</strong> Перед поклейкою стіни обробляються ґрунтовкою або клеєм. Від цього залежить довговічність результату.
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec" id="reviews">
+  <div class="sec-inner">
+    <p class="sec-tag r">Відгуки</p>
+    <h2 class="sec-title r">Що кажуть клієнти</h2>
+    <div class="sec-line r"></div>
+    <div class="reviews-grid">
+      <div class="rv r">
+        <div class="rv-stars">★★★★★</div>
+        <p class="rv-text">Зробили все швидко та якісно — ціни ринкові, хлопці молоді, досвідчені, видно що часто клеять шпалери.</p>
+        <div class="rv-author"><div class="rv-av">Ю</div><div class="rv-name">Юля</div></div>
+      </div>
+      <div class="rv r">
+        <div class="rv-stars">★★★★★</div>
+        <p class="rv-text">Поклеїли двушку на Святошино за 3 дні, працювали швидко, ціни хороші. Я задоволений.</p>
+        <div class="rv-author"><div class="rv-av">С</div><div class="rv-name">Сергій</div></div>
+      </div>
+      <div class="rv r">
+        <div class="rv-stars">★★★★★</div>
+        <p class="rv-text">Приїхали два хлопці, провели розрахунки, озвучили ціну, роботу зробили швидко. Поклейкою задоволена, поки все добре.</p>
+        <div class="rv-author"><div class="rv-av">Є</div><div class="rv-name">Євгенія</div></div>
+      </div>
+      <div class="rv r">
+        <div class="rv-stars">★★★★★</div>
+        <p class="rv-text">Знайшов хлопців в інтернеті, бо попередні майстри злилися. Трохи запізнились, але роботу зробили швидко, після себе прибрали. Рекомендую!</p>
+        <div class="rv-author"><div class="rv-av">В</div><div class="rv-name">Владислав</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section class="sec sec-dark" id="areas">
+  <div class="sec-inner">
+    <p class="sec-tag r">Географія</p>
+    <h2 class="sec-title r">Райони обслуговування</h2>
+    <div class="sec-line r"></div>
+    <p class="r" style="color:#7B93B0;font-size:14px;margin-bottom:18px;">Наші майстри обслуговують усі мікрорайони Києва:</p>
+    <div class="areas-tags r">
+      <span class="area">Біличі</span><span class="area">Новобіличі</span><span class="area">Воскресенка</span>
+      <span class="area">Дружби Народів</span><span class="area">Русанівка</span><span class="area">Шулявська</span>
+      <span class="area">Райдужний</span><span class="area">Пуща Водиця</span><span class="area">Китаєво</span>
+      <span class="area">Кaравaєві Дачі</span><span class="area">Березняки</span><span class="area">Липки</span>
+      <span class="area">Корчувате</span><span class="area">Жуляни</span><span class="area">Татарка</span>
+      <span class="area">Лісовий</span><span class="area">Коцюбинське</span><span class="area">Отрадний</span>
+      <span class="area">Святошин</span><span class="area">Троєщина</span>
+    </div>
+    <p class="r" style="color:#7B93B0;font-size:13px;margin-top:18px;">Також працюємо по Київській області — уточнюйте вартість виїзду по телефону.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-sec" id="contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner">
+    <p class="sec-tag r">Зв'язок</p>
+    <h2 class="sec-title r">Готові до роботи</h2>
+    <div class="sec-line r" style="margin:0 auto 20px;"></div>
+    <p class="r" style="color:#7B93B0;font-size:14px;max-width:400px;margin:0 auto;line-height:1.7;">Зателефонуйте — безкоштовно розрахуємо вартість, узгодимо зручний час і приїдемо вчасно.</p>
+    <a class="contact-phone r" href="tel:+380950166845">+380 95 016 68 45</a>
+    <a class="btn-main r" href="tel:+380950166845" style="display:inline-flex;margin:0 auto;">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Зателефонувати зараз
+    </a>
+    <p class="contact-note r">Також виконуємо <strong>комплексний ремонт під ключ</strong> — від шпаклювання до фінішного оздоблення.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 DecorLux · Поклейка шпалер у Києві &nbsp;·&nbsp; <a href="tel:+380950166845">+380 95 016 68 45</a></p>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+// Count-up
+const counters = document.querySelectorAll('[data-target]');
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.target;
+    const display = el.dataset.display;
+    const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '+';
+    if(display) { el.textContent = display; cio.unobserve(el); return; }
+    let cur = 0;
+    const step = target / 45;
+    const t = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.floor(cur) + suffix;
+      if(cur >= target) clearInterval(t);
+    }, 28);
+    cio.unobserve(el);
+  });
+}, { threshold: 0.5 });
+counters.forEach(el => cio.observe(el));
+
+// Nav bg on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.background =
+    scrollY > 50 ? 'rgba(8,15,26,0.98)' : 'rgba(8,15,26,0.88)';
+}, { passive: true });
+</script>
+</body>
+</html>
